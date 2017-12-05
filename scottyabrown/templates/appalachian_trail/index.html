@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <h3 class="page-display">Appalachian Trail</h3>
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>Mile</th>
+            <th>State</th>
+            <th>Location</th>
+            <th>Day Off</th>
+            <th>Precipitation</th>
+            <th>Precipitation Status</th>
+            <th>Notes</th>
+        </tr>
+        {% for hd in hiking_days %}
+        <tr>
+            <td>{{ hd.day }}</td>
+            <td>{{ hd.mile }}</td>
+            <td>{{ hd.state }}</td>
+            <td>{{ hd.location }}</td>
+            <td>{{ hd.day_off }}</td>
+            <td>{{ hd.precipitation }}</td>
+            <td>{{ hd.precip_status }}</td>
+            <td>{{ hd.notes }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

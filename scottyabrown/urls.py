@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from athensrock import views as arock_views
 from home import views as home_views
+from appalachian_trail import views as at_views
 
 urlpatterns = [
     url(r'^$', home_views.index, name='home'),
@@ -10,6 +11,7 @@ urlpatterns = [
     url(r'^callback/$', arock_views.callback, name='callback'),
     url(r'^add_songs/', arock_views.add_songs, name='arock_add_songs'),
     url(r'^athensrock/dashboard/', arock_views.dashboard, name='arock_dashboard'),
+    url(r'^appalachian_trail/index', at_views.index, name='at_index'),
     url(r'^admin/', admin.site.urls),
 ]
 

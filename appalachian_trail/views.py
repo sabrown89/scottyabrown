@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from django.shortcuts import render
+from appalachian_trail.models import HikingDay
 
-# Create your views here.
+def index(request):
+    hiking_days = HikingDay.objects.all()
+    return render(request, 'appalachian_trail/index.html', {
+        'hiking_days': hiking_days,
+    })
