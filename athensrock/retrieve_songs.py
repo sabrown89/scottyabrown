@@ -2,11 +2,25 @@ import requests
 from bs4 import BeautifulSoup
 import html.parser
 from IPython import embed
+from athensrock.clean_song import CleanSong
 
 class RetrieveSongs(object):
 
     def __init__(self):
         self.url = 'http://www.athensrock.com'
+
+    def clean_song_list(self):
+        clean_list = []
+        for raw_song in self.delimited_song_list():
+            song = raw_song.split('\r')
+            song = song[0].strip()
+            clean_list.append(CleanSong(song).clean_song())
+        #    clean_list.append(song[0].strip())
+        return clean_list
+
+    def delimited_song_list(self):
+        delimited_songs = self.raw_song_list().split(self.song_delimiter())
+        return delimited_songs[1:] # removes playlist title from song list
 
     def page_request(self):
         return requests.get(self.url)
@@ -25,14 +39,3 @@ class RetrieveSongs(object):
 
     def song_delimiter(self):
         return html.unescape('&raquo;')
-
-    def delimited_song_list(self):
-        delimited_songs = self.raw_song_list().split(self.song_delimiter())
-        return delimited_songs[1:] # removes playlist title from song list
-
-    def clean_song_list(self):
-        clean_list = []
-        for raw_song in self.delimited_song_list():
-            song = raw_song.split('\r')
-            clean_list.append(song[0].strip())
-        return clean_list

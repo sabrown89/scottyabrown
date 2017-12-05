@@ -17,11 +17,6 @@ class SpotifyAuth(object):
             return False
         else:
             return True
-    def spotify_auth(self):
-        if self.needs_authentication():
-            "authentication needs to happen"
-        else:
-            return spotipy.Spotify(self.get_access_token())
 
     def get_access_token(self):
         token_info = self.spotify_oauth().get_cached_token()
@@ -38,6 +33,8 @@ class SpotifyAuth(object):
                                           scope=self.scope,
                                           cache_path=self.cache
                                           )
+    def spotify_auth(self):
+        return spotipy.Spotify(auth=self.get_access_token())
 
     def get_authorize_url(self):
         return self.spotify_oauth().get_authorize_url()

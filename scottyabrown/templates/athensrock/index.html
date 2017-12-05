@@ -1,33 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h3>All Songs</h3>
-        <table>
-            <tr>
-                <th>Raw Song Name</th>
-                <th>Artist</th>
-                <th>Song</th>
-                <th>Added to Playlist?</th>
-                <th>Created At</th>
-            </tr>
-            {% for song in songs %}
-            <tr>
-                <td>{{ song.raw_name }}</td>
-                <td>{{ song.artist }}</td>
-                <td>{{ song.name }}</td>
-                <td>{{ song.added_to_playlist }}</td>
-                <td>{{ song.created }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+<div class="container-fluid">
+    <h3 class="page-display">Athens Rock - How does this all work?</h3>
+    <ol id="athens-rock">
+        <li>We retrieve the songs currently listed on athensrock.com's homepage, clean up the songs so they are better formatted for search, and then search Spotify for each song. If a match is found, the song is added to the athens_rock_stream playlist so you are able to listen to the same music that is being played by Athens Rock 100.7</li>
+        <li>To add songs to the athens_rock_stream playlist, click the button that says 'Click here to Add Songs' and then you will be redirected to the 'Athens Rock Dashboard' which will show you which songs were added to the playlist and which ones were not. If you do not see a 'Click here to Add Songs' button, see step 3.</li>
+        <li>If the 'Click here to Add Songs' button is not there, it means we must authenticate Spotify (see step 4) or songs have been added in the last two hours so we must wait two hours (from the last time songs were added) for the Athens Rock website to refresh a new list of songs.</li>
+        <li>To add songs to a Spotify playlist, we must authenticate with Spotify to show them that we are who we say we are</li>
+        <li>As a security measure, Spotify makes us refresh our access codes on occassion so if you see a button that says 'Click here to Authenticate', it means we must refresh our access codes before we can add songs. Once you click the 'Click here to Authenticate' button, the 'Click here to Add Songs' button will appear</li>
+        <li>If you have any questions or are experiencing any issues, you can email me at: scottabrown89@gmail.com</li>
+        <li>All of the code that runs the above program is listed on my github at: github.com/sabrown89</li>
+        <li><a href="http://www.athensrock.com">Athens Rock Website</a></li>
+    </ol>
 
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Hello there</p>
-        </div>
-    </div>
-    <a href={{ sp.get_authorize_url }}>Authenticate</a>
-    <p>{{ sp.authenticate }}</p>
-    <p>{{ sp.get_access_token }}</p>
+    {% if songs_added_in_last_two_hours %}
+        <button type="button" class="btn btn-danger">You must wait approximately {{ time_left }} minutes until you can add songs again (refresh page to update)</button>
+    {% elif sp.needs_authentication %}
+        <a href="{{ sp.get_authorize_url }}"><button type="button" class="btn btn-primary">Click here to Authenticate</a></button>
+    {% else %}
+    <a href="{% url 'arock_add_songs' %}"><button type="button" class="btn btn-primary">Add Songs from Athens Rock Website (takes 10-30 seconds once clicked)</button></a>
+    {% endif %}
+
+    </br>
+    </br>
+    <a href="{% url 'arock_dashboard' %}"><button type="button" class="btn btn-primary">Athens Rock Dashboard</button></a>
+
+    <h3 class="page-display">How do I listen?</h3>
+    <iframe id="spotify-embed" src="https://open.spotify.com/embed/user/scottyspompom/playlist/7wXwowhd8095cBQdtGJYid" frameborder="0" allowtransparency="true"></iframe>
+    <h3><a href="https://open.spotify.com/user/scottyspompom/playlist/7wXwowhd8095cBQdtGJYid">Or go to the Playlist</a></h3>
+</div>
 {% endblock %}

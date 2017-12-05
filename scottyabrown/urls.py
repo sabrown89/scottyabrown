@@ -6,9 +6,10 @@ from home import views as home_views
 
 urlpatterns = [
     url(r'^$', home_views.index, name='home'),
-    url(r'^athensrock/', arock_views.index, name='arock_index'),
-    url(r'^song/(?P<id>\d+)/', arock_views.song_detail, name='arock_song_detail'),
-    url(r'^callback/$', home_views.callback, name='callback'),
+    url(r'^athensrock/index', arock_views.index, name='arock_index'),
+    url(r'^callback/$', arock_views.callback, name='callback'),
+    url(r'^add_songs/', arock_views.add_songs, name='arock_add_songs'),
+    url(r'^athensrock/dashboard/', arock_views.dashboard, name='arock_dashboard'),
     url(r'^admin/', admin.site.urls),
 ]
 
