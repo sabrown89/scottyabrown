@@ -10,10 +10,10 @@ td, th {
 }
 
 body {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 100px;
-    padding-right: 100px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 6%;
+    margin-right: 6%;
 }
 
 ul {
