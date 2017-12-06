@@ -11,3 +11,4 @@ class HikingDay(models.Model):
     precipitation = models.BooleanField()
     precip_status = models.CharField(max_length=100, blank=True)
     notes = models.TextField()
+    trail_magic = models.BooleanField(default=False)
