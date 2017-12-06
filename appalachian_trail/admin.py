@@ -11,7 +11,8 @@ class HikingDayAdmin(admin.ModelAdmin):
                     'day_off',
                     'precipitation',
                     'precip_status',
-                    'notes'
+                    'notes',
+                    'trail_magic'
                     ]
 
 admin.site.register(HikingDay, HikingDayAdmin)
