@@ -9,5 +9,5 @@ class HikingDay(models.Model):
     location = models.CharField(max_length=255)
     day_off = models.BooleanField()
     precipitation = models.BooleanField()
-    precip_status = models.CharField(max_length=100)
+    precip_status = models.CharField(max_length=100, blank=True)
     notes = models.TextField()
