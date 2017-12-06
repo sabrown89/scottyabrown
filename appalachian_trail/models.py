@@ -12,3 +12,5 @@ class HikingDay(models.Model):
     precip_status = models.CharField(max_length=100, blank=True)
     notes = models.TextField()
     trail_magic = models.BooleanField(default=False)
+    resupply = models.BooleanField(default=False)
+    resupply_location = models.CharField(default='', max_length=255, blank=True)
