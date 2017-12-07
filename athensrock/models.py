@@ -10,4 +10,4 @@ class Song(models.Model):
     artist = models.CharField(max_length=255)
     spotify_id = models.CharField(max_length=255)
     added_to_playlist = models.BooleanField()
-    created = models.DateTimeField(default=timezone.localtime(timezone.now()))
+    created = models.DateTimeField(default=timezone.now)
