@@ -3,31 +3,30 @@
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3">
-            <h4><a href="{% url 'arock_index' %}">Go Back to Athens Rock</a></h4>
-        </div>
-        <div class="col-md-5 offset-col-md-3">
-            <h3 class="page-display">Athens Rock Dashboard</h3>
-        </div>
+    {% include 'athensrock/athens_rock_header.html' %}
+    <h3 class="arock-subheader">Dashboard</h3>
+    <p class="arock-subheader">{{ song_accuracy }}% represents the percentage of songs successfully added to the Athens Rock playlist from searching athensrock.com</p>
+    </div>
     </br>
-    <table>
-        <tr>
-            <th>Raw Song Name</th>
-            <th>Artist</th>
-            <th>Name</th>
-            <th>Added to Playlist?</th>
-            <th>Created At</th>
-        </tr>
-        {% for song in songs %}
-        <tr>
-            <td>{{ song.raw_name }}</td>
-            <td>{{ song.artist }}</td>
-            <td>{{ song.name }}</td>
-            <td>{{ song.added_to_playlist }}</td>
-            <td>{{ song.created }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div style="margin-right: 1%; margin-left: .5%;">
+        <table class="table table-striped" style="100%">
+            <tr>
+                <th>Raw Song Name</th>
+                <th>Artist</th>
+                <th>Name</th>
+                <th>Playlist?</th>
+                <th>Created At</th>
+            </tr>
+            {% for song in songs %}
+            <tr class="bg-info">
+                <td>{{ song.raw_name }}</td>
+                <td>{{ song.artist }}</td>
+                <td>{{ song.name }}</td>
+                <td>{{ song.added_to_playlist }}</td>
+                <td>{{ song.created }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </div>
 {% endblock %}

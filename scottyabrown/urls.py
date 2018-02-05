@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^callback/$', arock_views.callback, name='callback'),
     url(r'^add_songs/', arock_views.add_songs, name='arock_add_songs'),
     url(r'^athensrock/dashboard/', arock_views.dashboard, name='arock_dashboard'),
+    url(r'^athensrock/listen', arock_views.listen, name='arock_listen'),
     url(r'^appalachian_trail/show', at_views.show, name='at_show'),
     url(r'^appalachian_trail/index', at_views.index, name='at_index'),
     url(r'^appalachian_trail/dashboard', at_views.dashboard, name='at_dashboard'),
