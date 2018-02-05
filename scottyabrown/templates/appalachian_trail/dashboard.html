@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block js %}
+<div class="container-fluid">
+    {% include 'appalachian_trail/at_header.html' %}
+    <h3 id="at-subheader">Dashboard</h3>
+    </br>
+    <canvas id="myStateChart" class="graph" height="500" width="1200"></canvas>
+    {% include "appalachian_trail/js/miles_by_state_graph.js" %}
+    </br>
+    </br>
+    </br>
+
+    <canvas id="myPolarChart" class="graph" height="500" width="1200"></canvas>
+    {% include "appalachian_trail/js/hiking_days_graph.js" %}
+    </br>
+    </br>
+    </br>
+
+    <canvas id="myPerDayChart" class="graph" height="500" width="1200"></canvas>
+    {% include "appalachian_trail/js/miles_by_day_graph.js" %}
+    </br>
+    </br>
+    </br>
+
+    <canvas id="myPerDayOrderedChart" class="graph" height="500" width="1200"></canvas>
+    {% include "appalachian_trail/js/miles_by_day_ordered_graph.js" %}
+    </br>
+    </br>
+    </br>
+
+    <h3>Overall Hiking Data</h3>
+    <table class="table table-striped">
+        <tr>
+            <td>Total Miles Hiked</td>
+            <td>2189.9</td>
+        </tr>
+        <tr class="bg-success">
+            <td>Total days of rain</td>
+            <td>63</td>
+        </tr>
+    </table>
+    </br>
+    </br>
+    </br>
+
+    <h3>Resupply Locations ({{resupply_days}} resupplies)</h3>
+    <table class="table table-striped">
+        <tr id="at-resupply">
+            <th>Resupply Day</th>
+            <th>Resupply Location</th>
+            <th>Days Since Last Resupply (excludes days off)</th>
+            <th>Miles Between Last Resupply</th>
+            <th>Mile</th>
+        </tr>
+        {% for rs in resupplys %}
+        <tr class="bg-success">
+            <td>{{ rs.day }}</td>
+            <td>{{ rs.resupply_location }}</td>
+            <td>{{ rs.days_between_resupply }}</td>
+            <td>{{ rs.miles_between_resupply }}</td>
+            <td>{{ rs.mile }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock js %}

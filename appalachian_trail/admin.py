@@ -14,7 +14,8 @@ class HikingDayAdmin(admin.ModelAdmin):
                     'notes',
                     'trail_magic',
                     'resupply',
-                    'resupply_location'
+                    'resupply_location',
+                    'miles_hiked'
                     ]
 
 admin.site.register(HikingDay, HikingDayAdmin)
