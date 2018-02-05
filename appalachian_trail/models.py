@@ -14,3 +14,6 @@ class HikingDay(models.Model):
     trail_magic = models.BooleanField(default=False)
     resupply = models.BooleanField(default=False)
     resupply_location = models.CharField(default='', max_length=255, blank=True)
+    miles_hiked = models.DecimalField(max_digits=8, decimal_places=1, default=0.0)
+
+    objects = HikingDayManager()
