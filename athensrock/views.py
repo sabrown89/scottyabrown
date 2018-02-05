@@ -32,14 +32,25 @@ def callback(request):
 
 def dashboard(request):
     songs = Song.objects.order_by('-created')
+    found_songs = Song.objects.filter(added_to_playlist=True)
+    song_percentage = (found_songs.count() / songs.count()) * 100
+    song_accuracy = round(song_percentage, 2)
     return render(request, 'athensrock/dashboard.html',{
         'songs': songs,
+        'song_accuracy' : song_accuracy,
     })
 
 def add_songs(request):
     adts = AddSongsToSpotify()
     adts.add_songs_to_spotify()
     songs = Song.objects.order_by('-created')
+    found_songs = Song.objects.filter(added_to_playlist=True)
+    song_percentage = (found_songs.count() / songs.count()) * 100
+    song_accuracy = round(song_percentage, 2)
     return render(request, 'athensrock/dashboard.html',{
         'songs': songs,
+        'song_accuracy' : song_accuracy,
     })
+
+def listen(request):
+    return render(request, 'athensrock/listen.html')
