@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container-fluid">
+    {% include 'appalachian_trail/at_header.html' %}
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail text-center">
+                <a href="{% url 'at_dashboard' %}">
+                    <img class="img-responsive" id="dash-img" src="{% static 'images/growth_icon.png' %}" alt="growth_icon"/>
+                    <div class="caption">
+                        <h3 class="text-center" id="at-pic-header">Dashboard</h3>
+                    </div>
+                    <div class="caption-sub">
+                        <p class="text-center" id="at-pic">Graph and table displays of hiking data</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail text-center">
+                <a href="{% url 'at_index' %}">
+                    <img class="img-responsive" id='binary-img' src="{% static 'images/binary_flat_green.jpeg' %}" alt="binary_data"/>
+                    <div class="caption">
+                        <h3 class="text-center" id="at-pic-header">Raw Data</h3>
+                    </div>
+                    <div class="caption-sub">
+                        <p class="text-center" id="at-pic">The numbers behind the hike</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail text-center">
+                <a href="{% url 'at_pictures' %}">
+                    <img class="img-responsive" id='mountain-img' src="{% static 'images/picture_forest_icon.png' %}" alt="pic_forest"/>
+                    <div class="caption">
+                        <h3 class="text-center" id="at-pic-header">Pictures</h3>
+                    </div>
+                    <div class="caption-sub">
+                        <p class="text-center" id="at-pic">A collection of our favorite pictures</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail text-center">
+                <a href="https://youtu.be/s_W_GRTWL9Q">
+                    <img class="img-responsive" id='video-gif' src="https://media.giphy.com/media/sC3TZtEa5q9pe/giphy.gif" alt="video_gif"/>
+                    <div class="caption">
+                        <h3 class="text-center" id="at-pic-header">Video</h3>
+                    </div>
+                    <div class="caption-sub">
+                        <p class="text-center" id="at-pic">A video made by Laura of our journey on the AT</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail text-center">
+                <a href="{% url 'at_faq' %}">
+                    <img class="img-responsive" id='faq-img' src="{% static 'images/faq_icon.png' %}" alt="faq_icon"/>
+                    <div class="caption">
+                        <h3 class="text-center" id="at-pic-header">FAQ</h3>
+                    </div>
+                    <div class="caption-sub">
+                        <p class="text-center" id="at-pic">Answers to common questions we receive about the hike</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail text-center">
+                <a href="{% url 'at_gear' %}">
+                    <img class="img-responsive" id='gear-img' src="{% static 'images/gear_icon.png' %}" alt="faq_icon"/>
+                    <div class="caption">
+                        <h3 class="text-center" id="at-pic-header">Gear</h3>
+                    </div>
+                    <div class="caption-sub">
+                        <p class="text-center" id="at-pic">A list of gear we used and their respective costs</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
