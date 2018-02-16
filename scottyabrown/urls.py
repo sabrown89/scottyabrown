@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from athensrock import views as arock_views
@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^appalachian_trail/pictures', at_views.pictures, name='at_pictures'),
     url(r'^appalachian_trail/faq', at_views.faq, name='at_faq'),
     url(r'^appalachian_trail/gear', at_views.gear, name='at_gear'),
+    url(r'^blog/', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
 ]
 
