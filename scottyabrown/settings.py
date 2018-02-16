@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'athensrock',
     'appalachian_trail',
+    'blog',
 ]
 
 MIDDLEWARE = [
