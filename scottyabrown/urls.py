@@ -7,7 +7,8 @@ from home import views as home_views
 from appalachian_trail import views as at_views
 
 urlpatterns = [
-    url(r'^$', home_views.index, name='home'),
+    url(r'^admin/', admin.site.urls),
+    url(r'^blog/', include('blog.urls')),
     url(r'^athensrock/index', arock_views.index, name='arock_index'),
     url(r'^callback/$', arock_views.callback, name='callback'),
     url(r'^add_songs/', arock_views.add_songs, name='arock_add_songs'),
@@ -19,8 +20,7 @@ urlpatterns = [
     url(r'^appalachian_trail/pictures', at_views.pictures, name='at_pictures'),
     url(r'^appalachian_trail/faq', at_views.faq, name='at_faq'),
     url(r'^appalachian_trail/gear', at_views.gear, name='at_gear'),
-    url(r'^blog/', include('blog.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', home_views.index, name='home'),
 ]
 
 if settings.DEBUG:
