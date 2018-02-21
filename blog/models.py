@@ -2,6 +2,23 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from markdown_deux import markdown
+from django.utils.safestring import mark_safe
+import mistune
+from pygments import highlight
+from pygments.lexers import get_lexer_by_name
+from pygments.formatters import html
+from django import template
+
+class HighlightRenderer(mistune.Renderer):
+    def block_code(self, code, lang):
+        lang = "python"
+        if not lang:
+            return '\n<pre><code>%s</code></pre>\n' % \
+                    mistune.escape(code)
+        lexer = get_lexer_by_name(lang, stripall=True)
+        formatter = html.HtmlFormatter()
+        return highlight(code, lexer, formatter)
 
 class Post(models.Model):
     STATUS_CHOICES = (
@@ -30,3 +47,9 @@ class Post(models.Model):
                                                  self.publish.strftime('%m'),
                                                  self.publish.strftime('%d'),
                                                  self.slug])
+    def get_markdown(self):
+        renderer = HighlightRenderer()
+        markdown = mistune.Markdown(renderer=renderer)
+        body = self.body
+        markdown_text = markdown(body)
+        return mark_safe(markdown_text)
