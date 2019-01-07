@@ -15,10 +15,9 @@ dotenv.load_dotenv(dotenv_path)
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', False)
+DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('WEBSITE'), os.environ.get('IP_ADDRESS')]
-
 
 # Application definition
 
@@ -121,7 +120,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'scottyabrown/static'),]
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'scottyabrown/static/static_root')
+STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL.strip('/'))
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'scottyabrown/static/media')
