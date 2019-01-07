@@ -1,1 +1,30 @@
-<p>Hello from running</p>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container-fluid">
+  <h3 id="at-subheader">Raw Data</h3>
+  </br>
+  <div style="margin-right: 1%; margin-left: .5%;">
+    <table class="table table-striped" style="100%">
+      <tr>
+        <th>Day</th>
+        <th>Mileage</th>
+        <th>Location</th>
+        <th>Type of Run</th>
+        <th>Notes</th>
+      </tr>
+      {% for rd in running_days %}
+      <tr class="bg-success">
+        <td>{{ rd.day }}</td>
+        <td>{{ rd.mileage }}</td>
+        <td>{{ rd.location }}</td>
+        <td>{{ rd.type_of_run }}</td>
+        <td>{{ rd.notes }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}
+
