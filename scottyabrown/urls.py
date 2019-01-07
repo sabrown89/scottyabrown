@@ -9,6 +9,7 @@ from appalachian_trail import views as at_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('blog.urls')),
+    url(r'^running/', include('running.urls')),
     url(r'^athensrock/index', arock_views.index, name='arock_index'),
     url(r'^callback/$', arock_views.callback, name='callback'),
     url(r'^add_songs/', arock_views.add_songs, name='arock_add_songs'),
