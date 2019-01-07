@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'athensrock',
     'appalachian_trail',
     'blog',
+    'running',
 
     #Django built-in apps
     'django.contrib.admin',
