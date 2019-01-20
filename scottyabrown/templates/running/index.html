@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block content %}
+{% block js %}
 <div class="container-fluid">
+    </br>
+    <canvas id="myPerDayChart" class="graph" height="500" width="1200"></canvas>
+    {% include "running/js/running_mileage_by_day_graph.js" %}
+    </br>
+    </br>
+    </br>
+
   <h3 id="at-subheader">Raw Data</h3>
   </br>
   <div style="margin-right: 1%; margin-left: .5%;">
@@ -26,5 +33,5 @@
     </table>
   </div>
 </div>
-{% endblock %}
+{% endblock js %}
 
