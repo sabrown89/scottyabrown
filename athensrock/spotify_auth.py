@@ -2,7 +2,6 @@ import sys
 import os
 import spotipy
 import spotipy.util as util
-from IPython import embed
 
 class SpotifyAuth(object):
     def __init__(self, code):

@@ -4,7 +4,6 @@ from django.db import models
 from django.db.models import Count
 from django.db.models import ObjectDoesNotExist
 from decimal import Decimal
-from IPython import embed
 
 class HikingDayManager(models.Manager):
     STATES_LIST = ['GA','NC','TN','VA','WV','MD','PA','NJ','NY','CT','MA','VT','NH','ME']

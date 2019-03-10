@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import html.parser
-from IPython import embed
 from athensrock.clean_song import CleanSong
 
 class RetrieveSongs(object):
