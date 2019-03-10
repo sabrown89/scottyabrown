@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    {% include 'recipe_builder/recipe_header.html' %}
+    <h3 id="at-subheader">Raw Data</h3>
+    </br>
+    <div style="margin-right: 1%; margin-left: .5%;">
+        <table class="table table-striped" style="100%">
+            <tr>
+                <th>Recipe</th>
+                <th>Prep Time</th>
+                <th>Cook Time</th>
+                <th>Weeknight</th>
+                <th>Cuisine</th>
+                <th>Publication</th>
+                <th>Page Number</th>
+                <th>Overnight</th>
+            </tr>
+            {% for recipe in recipes%}
+            <tr class="bg-success">
+                <td>{{ recipe.name}}</td>
+                <td>{{ recipe.prep_time}}</td>
+                <td>{{ recipe.cook_time}}</td>
+                <td>{{ recipe.weeknight}}</td>
+                <td>{{ recipe.cuisine}}</td>
+                <td>{{ recipe.publication}}</td>
+                <td>{{ recipe.page_number}}</td>
+                <td>{{ recipe.overnight}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

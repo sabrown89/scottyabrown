@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from athensrock import views as arock_views
 from home import views as home_views
 from appalachian_trail import views as at_views
+from recipe_builder import views as recipe_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -21,6 +22,7 @@ urlpatterns = [
     url(r'^appalachian_trail/pictures', at_views.pictures, name='at_pictures'),
     url(r'^appalachian_trail/faq', at_views.faq, name='at_faq'),
     url(r'^appalachian_trail/gear', at_views.gear, name='at_gear'),
+    url(r'^recipe_builder/index', recipe_views.index, name='recipe_index'),
     url(r'^$', home_views.index, name='home'),
 ]
 
