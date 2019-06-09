@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^appalachian_trail/faq', at_views.faq, name='at_faq'),
     url(r'^appalachian_trail/gear', at_views.gear, name='at_gear'),
     url(r'^recipe_builder/index', recipe_views.index, name='recipe_index'),
+    url(r'^recipe_builder/create', recipe_views.create, name='recipe_create'),
     url(r'^$', home_views.index, name='home'),
 ]
 

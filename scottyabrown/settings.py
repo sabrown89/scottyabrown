@@ -15,9 +15,9 @@ dotenv.load_dotenv(dotenv_path)
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('WEBSITE'), os.environ.get('IP_ADDRESS')]
+ALLOWED_HOSTS = [os.environ.get('WEBSITE'), os.environ.get('IP_ADDRESS'), 'localhost']
 
 # Application definition
 
@@ -79,6 +79,8 @@ WSGI_APPLICATION = 'scottyabrown.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
