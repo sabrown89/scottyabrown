@@ -332,3 +332,41 @@ iframe {
 #faq-gun {
     padding-bottom: 0;
 }
+
+li.cocktail-header {
+    font-size: 1.55em;
+    font-weight: bold;
+}
+
+p.cocktail-ingredients {
+    font-size: 1em;
+    padding-left: 5%;
+    font-weight: normal;
+    padding-top: .5%;
+}
+
+li.cocktail-subtext {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-left: 4%;
+    list-style-type: disc;
+}
+
+p.cocktail-mixing {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p.border-bottom {
+    border-bottom: 1px solid black;
+    opacity: 0.2;
+}
+
+.cocktail-mixing-group {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+}
+

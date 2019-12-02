@@ -2,26 +2,87 @@
 {% load staticfiles %}
 
 {% block content %}
-<h3 class="margin-text-no-top">Cocktails</h3>
-<ul class="margin-text-no-top" id="project-list">
-    <li>Betelgeuse
-        <p class="subtext">Mezcal - Honey Simple Syrup - Beet Juice - Green Chartreuse - Lime Juice</p>
+<h2 class="margin-text-no-top">Cocktails</h2>
+<p class="margin-text-no-top" style="padding-left:2%;">Each cocktail on this list has been made 20+ times. Enjoy!</p>
+<ul class="margin-text-no-top">
+    <li class="cocktail-header">Betelgeuse</li>
+        <p class="cocktail-ingredients">Mezcal - Honey Simple Syrup - Beet Juice - Green Chartreuse - Lime Juice</p>
         <ul>
-            <li class="subtext">2oz mezcal (I prefer a light smokiness so it doesn't overpower the drink)</li>
-            <li class="subtext">0.5oz honey simple syrup (1:1)</li>
-            <li class="subtext">0.75oz beet juice (fresh beets juiced from a juicer)</li>
-            <li class="subtext">0.25oz green chartreuse</li>
-            <li class="subtext">0.5oz freshly squeezed lime juice</li>
-            <li class="subtext">0.5oz freshly squeezed lime juice</li>
+            <li class="cocktail-subtext">2oz mezcal (I prefer a light smokiness so it doesn't overpower the drink)</li>
+            <li class="cocktail-subtext">0.5oz honey simple syrup (1:1)</li>
+            <li class="cocktail-subtext">0.75oz beet juice (fresh beets juiced from a juicer)</li>
+            <li class="cocktail-subtext">0.25oz green chartreuse</li>
+            <li class="cocktail-subtext">0.5oz freshly squeezed lime juice</li>
+            <li class="cocktail-subtext">0.5oz freshly squeezed lime juice</li>
         </ul>
-        <p class="subtext">Combine all ingredients into a shaker and shake with ice. Strain into a coupe glass.</p></li>
-    <li><a href="{% url 'arock_index' %}">Athens Rock</a>
-        <p class="subtext">Listen to <a href="https://athensrock.com">Athens Rock 100.7</a> from anywhere (web scraping and Spotify API)</p></li>
-    <li><a href="{% url 'running:index' %}">Running Data</a>
-        <p class="subtext">Shows a table of data detailing my marathon training along with graphs</p></li>
-    <li><a href="https://github.com/pyatl/podium-django">Podium</a>
-        <p class="subtext">An open source Django application for booking and scheduling talks for meetups</p></li>
-    <li><a href="https://github.com/sabrown89">Github</a>
-        <p class="subtext">A collection of my projects and practice problems I perform regularly</p></li>
+        <div class="cocktail-mixing-group">
+            <p class="cocktail-mixing">- Combine all ingredients into a shaker and shake with ice</p>
+            <p class="cocktail-mixing">- Strain into a coupe glass</p>
+        </div>
+    <li class="cocktail-header">Tom Collins</li>
+        <p class="cocktail-ingredients">Gin - Simple Syrup - Lemon Juice - Soda Water</p>
+        <ul>
+            <li class="cocktail-subtext">2oz gin (generally beefeater)</li>
+            <li class="cocktail-subtext">0.75oz simple syrup (2:1 -- 2 parts sugar to 1 part water)</li>
+            <li class="cocktail-subtext">1oz freshly squeezed lemon juice</li>
+            <li class="cocktail-subtext">3oz soda water</li>
+        </ul>
+        <div class="cocktail-mixing-group">
+            <p class="cocktail-mixing">- Combine gin, simple syrup, and lemon juice into a shaker and shake with ice</p>
+            <p class="cocktail-mixing">- Add soda water into the shaker and stir a few times</p>
+            <p class="cocktail-mixing">- Strain into a glass filled with ice</p>
+            <p class="cocktail-mixing">- (I stir the soda water after shaking because whenever I have added the soda water and shook the shaker, it causes a lot of pressure to build up and causes a mess)</p>
+        </div>
+    <li class="cocktail-header">Moscow Mule</li>
+        <p class="cocktail-ingredients">Vodka - Ginger Simple Syrup - Lime Juice - Soda Water - Crushed Ice</p>
+        <ul>
+            <li class="cocktail-subtext">2oz vodka (generally titos)</li>
+            <li class="cocktail-subtext">1.25oz ginger simple syrup (see Ginger Simple Syrup below for recipe)</li>
+            <li class="cocktail-subtext">0.375oz freshly squeezed lime juice</li>
+            <li class="cocktail-subtext">4oz soda water</li>
+            <li class="cocktail-subtext">~1cup crushed ice</li>
+        </ul>
+        <div class="cocktail-mixing-group">
+            <p class="cocktail-mixing">- Crush ice and place into moscow mule mug or similar vessel</p>
+            <p class="cocktail-mixing">- Combine remaining ingredients into vessel and stir vigorously</p>
+            <p class="cocktail-mixing">- (most people would like 0.5oz lime but I don't like much lime)</p>
+        </div>
+    <li class="cocktail-header">Ginger Simple Syrup (not a cocktail)</li>
+        <p class="cocktail-ingredients">Ginger - Turbinado Sugar - Water</p>
+        <ul>
+            <li class="cocktail-subtext">1lb fresh ginger</li>
+            <li class="cocktail-subtext">2cups turbinado sugar</li>
+            <li class="cocktail-subtext">2.5cups water</li>
+        </ul>
+        <div class="cocktail-mixing-group">
+            <p class="cocktail-mixing">- Peel 1lb of fresh ginger</p>
+            <p class="cocktail-mixing">- Take 1/4 of the peeled ginger and grate it
+            <p class="cocktail-mixing">- Take remaining 3/4 peeled ginger and cut into 1/4 inch knobs</p>
+            <p class="cocktail-mixing">- Place all peeled ginger, 1.5 cups of water, and 2 cups of turbinado sugar into a saucepan</p>
+            <p class="cocktail-mixing">- Take a measurement (the best you can) of the liquid level (use back of spoon and mark level). This will be your final liquid level after simmering</p>
+            <p class="cocktail-mixing">- Add remaining 1 cup of water to the saucepan</p>
+            <p class="cocktail-mixing">- Set burner to medium heat and stir to combine so the sugar doesn't burn</p>
+            <p class="cocktail-mixing">- Once the sugar is dissolved and the mixture is simmering, set to low heat and simmer until the liquid level you previously measured is reached (about 30 minutes)</p>
+            <p class="cocktail-mixing">- Cut off the heat and let steep for an additional 30 minutes to 1 hour</p>
+            <p class="cocktail-mixing">- Strain liquid through a fine sieve into clean glass jar</p>
+            <p class="cocktail-mixing">- Should last about 3 weeks</p>
+        </div>
+    <li class="cocktail-header">Dirty Gin Martini</li>
+        <p class="cocktail-ingredients">Gin - Olive Juice - Dry Vermouth</p>
+        <ul>
+            <li class="cocktail-subtext">2.25oz gin (tanqueray or hendricks)</li>
+            <li class="cocktail-subtext">0.5oz olive juice</li>
+            <li class="cocktail-subtext">splash of dry vermouth (enough to wash glass)</li>
+        </ul>
+        <div class="cocktail-mixing-group">
+            <p class="cocktail-mixing">- Fill drinking vessel with ice and water and let rest to chill glass</p>
+            <p class="cocktail-mixing">- Combine gin and olive juice into shaker with ice</p>
+            <p class="cocktail-mixing">- Stir ingredients in shaker vigorously until very cold</p>
+            <p class="cocktail-mixing">- Drain drinking vessel of ice water</p>
+            <p class="cocktail-mixing">- Add splash of dry vermouth to vessel to lightly rinse the bottom half of the vessel</p>
+            <p class="cocktail-mixing">- Pour dry vermouth out</p>
+            <p class="cocktail-mixing">- Strain gin and olive juice mixture into vessel</p>
+            <p class="cocktail-mixing">- Add two olives (my favorites are castlevetranos)</p>
+        </div>
 </ul>
 {% endblock %}
