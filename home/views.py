@@ -6,3 +6,6 @@ from IPython import embed
 
 def index(request):
     return render(request, 'home/index.html')
+
+def cocktails(request):
+    return render(request, 'home/cocktails.html')

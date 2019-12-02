@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^appalachian_trail/pictures', at_views.pictures, name='at_pictures'),
     url(r'^appalachian_trail/faq', at_views.faq, name='at_faq'),
     url(r'^appalachian_trail/gear', at_views.gear, name='at_gear'),
+    url(r'^cocktails/', home_views.cocktails, name='cocktails'),
     url(r'^$', home_views.index, name='home'),
 ]
 

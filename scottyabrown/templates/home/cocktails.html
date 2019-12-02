@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<h3 class="margin-text-no-top">Cocktails</h3>
+<ul class="margin-text-no-top" id="project-list">
+    <li>Betelgeuse
+        <p class="subtext">Mezcal - Honey Simple Syrup - Beet Juice - Green Chartreuse - Lime Juice</p>
+        <ul>
+            <li class="subtext">2oz mezcal (I prefer a light smokiness so it doesn't overpower the drink)</li>
+            <li class="subtext">0.5oz honey simple syrup (1:1)</li>
+            <li class="subtext">0.75oz beet juice (fresh beets juiced from a juicer)</li>
+            <li class="subtext">0.25oz green chartreuse</li>
+            <li class="subtext">0.5oz freshly squeezed lime juice</li>
+            <li class="subtext">0.5oz freshly squeezed lime juice</li>
+        </ul>
+        <p class="subtext">Combine all ingredients into a shaker and shake with ice. Strain into a coupe glass.</p></li>
+    <li><a href="{% url 'arock_index' %}">Athens Rock</a>
+        <p class="subtext">Listen to <a href="https://athensrock.com">Athens Rock 100.7</a> from anywhere (web scraping and Spotify API)</p></li>
+    <li><a href="{% url 'running:index' %}">Running Data</a>
+        <p class="subtext">Shows a table of data detailing my marathon training along with graphs</p></li>
+    <li><a href="https://github.com/pyatl/podium-django">Podium</a>
+        <p class="subtext">An open source Django application for booking and scheduling talks for meetups</p></li>
+    <li><a href="https://github.com/sabrown89">Github</a>
+        <p class="subtext">A collection of my projects and practice problems I perform regularly</p></li>
+</ul>
+{% endblock %}
