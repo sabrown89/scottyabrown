@@ -15,7 +15,7 @@ django-dash==0.5.3
 django-nine==0.1.13
 django-tinymce==2.6.0
 djangoajax==2.4
-djangorestframework==3.7.3
+djangorestframework==3.11.2
 dotenv==0.0.5
 easy-thumbnails==2.4.1
 feedparser==5.2.1
