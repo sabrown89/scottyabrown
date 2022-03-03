@@ -1,5 +1,4 @@
 import os
-import dj_database_url
 import dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -15,9 +14,10 @@ dotenv.load_dotenv(dotenv_path)
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('WEBSITE'), os.environ.get('IP_ADDRESS')]
+#ALLOWED_HOSTS = [os.environ.get('WEBSITE'), os.environ.get('IP_ADDRESS')]
+ALLOWED_HOSTS = ['localhost']
 
 # Application definition
 
@@ -25,8 +25,8 @@ INSTALLED_APPS = [
     # Project apps
     'athensrock',
     'appalachian_trail',
-    'blog',
     'running',
+    'gardening',
 
     #Django built-in apps
     'django.contrib.admin',
@@ -75,14 +75,6 @@ WSGI_APPLICATION = 'scottyabrown.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-    }
-}
-
-if 'DATABASE_URL' in os.environ.keys():
-    DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

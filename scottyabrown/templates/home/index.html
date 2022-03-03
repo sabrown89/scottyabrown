@@ -1,9 +1,11 @@
 {% extends "base.html" %}
-{% load staticfiles %}
+{% load static %}
 
 {% block content %}
 <h3 class="margin-text-no-top">Projects:</h3>
 <ul class="margin-text-no-top" id="project-list">
+    <li><a href="{% url 'gardening:index' %}">Plants</a>
+        <p class="subtext">Sign up for plants grown from seed and see what's growing</p></li>
     <li><a href="{% url 'at_show' %}">Appalachian Trail</a>
         <p class="subtext">A collection of data visualizations, pictures, video, and frequently asked questions</p></li>
     <li><a href="{% url 'arock_index' %}">Athens Rock</a>
