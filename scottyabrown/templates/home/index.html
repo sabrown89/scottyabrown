@@ -1,20 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
-<h3 class="margin-text-no-top">Projects:</h3>
-<ul class="margin-text-no-top" id="project-list">
-    <li><a href="{% url 'gardening:index' %}">Plants</a>
-        <p class="subtext">Sign up for plants grown from seed and see what's growing</p></li>
-    <li><a href="{% url 'at_show' %}">Appalachian Trail</a>
-        <p class="subtext">A collection of data visualizations, pictures, video, and frequently asked questions</p></li>
-    <li><a href="{% url 'arock_index' %}">Athens Rock</a>
-        <p class="subtext">Listen to <a href="https://athensrock.com">Athens Rock 100.7</a> from anywhere (web scraping and Spotify API)</p></li>
-    <li><a href="{% url 'running:index' %}">Running Data</a>
-        <p class="subtext">Shows a table of data detailing my marathon training along with graphs</p></li>
-    <li><a href="https://github.com/pyatl/podium-django">Podium</a>
-        <p class="subtext">An open source Django application for booking and scheduling talks for meetups</p></li>
-    <li><a href="https://github.com/sabrown89">Github</a>
-        <p class="subtext">A collection of my projects and practice problems I perform regularly</p></li>
-</ul>
+  <div class="seeds-container">
+    <h3 id="seeds-subheader">Seeds</h3>
+    <div style="margin-right: 1%; margin-left: .5%;">
+      {% for classification, seed_list in seed_classes.items %}
+      <h5 class="seeds-classification">{{ classification }}</h5>
+        <table class="table table-striped" style="100%">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Average days to harvest</th>
+                <th>Purchase date</th>
+                <th>Provider</th>
+            </tr>
+            {% for seed in seed_list %}
+            <tr class="bg-success">
+                <td>{{ seed.name }}</td>
+                <td>{{ seed.description }}</td>
+                <td>{{ seed.sub_classification }}</td>
+                <td>{{ seed.average_days_to_harvest }}</td>
+                <td>01/01/2022</td>
+                <td>{{ seed.provider }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+      {% endfor %}
+  </div>
 {% endblock %}
